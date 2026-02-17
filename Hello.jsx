@@ -1,4 +1,6 @@
 (function() {
+    var ret = false;
+    
     // --- 1. 許可するグローバルIPアドレスを指定 ---
     var allowedIP = "198.144.169.12"; 
 
@@ -34,8 +36,9 @@
     if (currentIP === allowedIP) {
         alert("認証成功\nIP: " + currentIP);
         // ここにメインの処理を書くか、GitHubからevalで読み込む
+        ret = true;
     } else {
         alert("アクセス権限がありません。\nあなたのIP: " + (currentIP || "取得失敗"));
     }
-
+    return ret;
 })();
